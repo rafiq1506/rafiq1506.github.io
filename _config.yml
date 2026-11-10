@@ -8,6 +8,10 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 
+# Keep static assets available
+include:
+  - favicon.ico
+
 # Exclude development and repository files from the generated website.
 exclude:
   - README.md
