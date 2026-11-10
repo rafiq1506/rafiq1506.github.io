@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Mohd Rafiq - Academic Resume</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@300;400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Trirong:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+    --primary: #2B2D42;
+    --secondary: #8D99AE;
+    --accent: #EF233C;
+    --light: #EDF2F4;
+    --dark: #2B2D42;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-link:focus,
+.btn:focus,
+.contact-info a:focus,
+.publication-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.4);
+    border-radius: 3px;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    font-family: 'Neuton', serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background: linear-gradient(135deg, #647FBC, #F08787);
+    color: white;
+    padding: 2rem 0;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 0 0 8px rgba(237, 242, 244, 0.3);
+}
+
+.profile-img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 0 8px rgba(239, 35, 60, 0.2);
+}
+
+.intro-text {
+    flex: 1;
+    padding: 0 2rem;
+    min-width: 300px;
+}
+
+h1 {
+    font-family: 'Trirong', serif;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.title {
+    font-size: 1.4rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.contact-info a {
+    color: var(--light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Navigation */
+nav {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.nav-item {
+    margin: 0 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: var(--transition);
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+/* Main Content */
+main {
+    padding: 3rem 0;
+}
+
+.section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.section:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.002);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+    font-family: 'Trirong', serif;
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.section-title i {
+    color: var(--accent);
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.table th, .table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table th {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Skills Styling */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-item {
+    background: linear-gradient(135deg, #f6f6f6 0%, #ffffff 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.skill-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.skill-bar {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent) 0%, #FF7B86 100%);
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+/* List Styling */
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.styled-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.styled-list li:before {
+    content: '•';
+    color: var(--accent);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-size: 1.2rem;
+}
+
+/* Publications */
+.publication-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+}
+
+.publication-citation {
+  font-family: 'PT Serif', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  text-align: justify;
+}
+
+.publication-title {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.publication-authors {
+    color: var(--secondary);
+    font-style: italic;
+}
+
+.publication-link {
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    transition: var(--transition);
+    word-break: break-all;
+}
+
+.publication-link:hover {
+    color: #c1121f;
+    transform: translateY(-2px);
+    transform: translateX(5px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #647FBC, #F08787);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.last-updated {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.1);
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--accent) 0%, #c1121f 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        padding: 1rem 0;
+    }
+
+    .contact-info {
+        justify-content: center;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+.styled-list li {
+    opacity: 0;
+    animation: fadeInList 0.5s ease forwards;
+}
+
+@keyframes fadeInList {
+    to { opacity: 1; }
+}
+
+/* Stagger the animation for each list item */
+.styled-list li:nth-child(1) { animation-delay: 0.1s; }
+.styled-list li:nth-child(2) { animation-delay: 0.2s; }
+.styled-list li:nth-child(3) { animation-delay: 0.3s; }
+.styled-list li:nth-child(4) { animation-delay: 0.4s; }
+.styled-list li:nth-child(5) { animation-delay: 0.5s; }
+.styled-list li:nth-child(6) { animation-delay: 0.6s; }
+  </style>
+</head>
+
+
+<body>
+  <header>
+    <div class="container header-content">
+        <img src="https://i.postimg.cc/qgGpMYR9/photo.png" alt="Mohd Rafiq" class="profile-img">
+      <div class="intro-text">
+        <h1>Dr. Mohd Rafiq</h1>
+        <div class="contact-info">
+          <a href="mailto:rafiq@lb.du.ac.in"><i class="fas fa-envelope"></i> rafiq@lb.du.ac.in</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> New Delhi, India</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+        <li class="nav-item"><a href="#awards" class="nav-link">Awards</a></li>
+        <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="objective" class="section animate">
+      <h2 class="section-title"><i class="fas fa-bullseye"></i> CAREER OBJECTIVE</h2>
+      <p>To obtain a position where my skills are valued and can benefit the organization.</p>
+    </section>
+
+    <!-- <section class="section animate">
+      <h2 class="section-title"><i class="fas fa-building"></i> PRESENT AFFILIATION</h2>
+      <p>Research Scholar, Department of Mathematics, University of Delhi, Delhi</p>
+    </section> -->
+
+    <section class="section animate">
+      <h2 class="section-title"><i class="fas fa-atom"></i> AREA OF SPECIALIZATION</h2>
+        <ul class="styled-list">
+            <li>Numerical schemes based on wavelets</li>
+            <li>Numerical Analysis</li>
+            <li>Differential Equations</li>
+        </ul>
+    </section>
+
+    <section id="education" class="section animate">
+      <h2 class="section-title"><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Academic</th>
+            <th>Degree/Certification Name</th>
+            <th>Institution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ph.D.</td>
+            <td>Ph.D.</td>
+            <td>Department of Mathematics, University of Delhi</td>
+          </tr>
+          <tr>
+            <td>Post-Graduation</td>
+            <td>M.Sc. Mathematics</td>
+            <td>Kirori Mal College, University of Delhi</td>
+          </tr>
+          <tr>
+            <td>Graduation</td>
+            <td>B.Sc.(H) Mathematics</td>
+            <td>Zakir Hussain College, University of Delhi</td>
+          </tr>
+          <tr>
+            <td rowspan="2">School</td>
+            <td>12th, CBSE</td>
+            <td>Govt. Sarvodaya Bal Vidyalaya, Timapr Pur, Delhi</td>
+          </tr>
+          <tr>
+            <td>10th, CBSE</td>
+            <td>Govt. Boys Sr. Sec. School, Khajoori Khas, Delhi</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+      <section id="experience" class="section animate">
+          <h2 class="section-title"><i class="fas fa-briefcase"></i> PROFESSIONAL EXPERIENCE</h2>
+          <ul class="styled-list">
+              <li>	<strong>Worked</strong> as Assistant Professor (Guest) at <strong>School of Open Learning (SOL)</strong>, University of Delhi, Delhi, from September 22, 2024 to November 24, 2024.</li>
+              <li> <strong>Worked</strong> as Assistant Professor (Guest) at <strong>Lakshmibai College</strong>, University of Delhi, Delhi, from October 13, 2023 to May 12, 2024.</li>
+              <li><strong>Worked</strong> as Guest Lecturer in <strong>Shaheed Rajguru College of Applied Sciences for Women</strong>, University of Delhi, Delhi, from August 1 to November 16, 2018.</li>
+          </ul>
+      </section>
+
+    <section id="awards" class="section animate">
+      <h2 class="section-title"><i class="fas fa-award"></i> NATIONAL AWARDS</h2>
+      <ul class="styled-list">
+        <li>Awarded the <strong>Maulana Azad National Senior Research Fellowship (MANSRF)</strong>, UGC, New Delhi, Delhi.
+          <br>Fellowship awarded from January 23, 2022 to August 30, 2023.
+        </li>
+        <li>Awarded the <strong>Maulana Azad National Junior Research Fellowship (MANJRF)</strong>, UGC, New Delhi, Delhi.
+          <br>Fellowship awarded from January 23, 2020 to January 22, 2022.
+        </li>
+        <li>Qualified <strong>CSIR-NET, December 2019</strong> in Mathematical Sciences with <strong>AIR-76</strong>
+          <br>Certificate awarded: July 20, 2020
+        </li>
+        <li>Qualified <strong>CSIR-NET, June 2018</strong> in Mathematical Sciences with <strong>AIR-60</strong>
+          <br>Certificate awarded: April 1, 2019
+        </li>
+        <li>Qualified <strong>GATE 2018 in Mathematics (MA)</strong> with GATE Score 445, AIR-568 and with <strong>Percentile 93.52%</strong>
+          <br>Certificate awarded: March 17, 2018.
+        </li>
+        <li>Qualified <strong>CSIR-NET, June 2016</strong> in Mathematical Sciences with <strong>AIR-79</strong>
+          <br>Certificate awarded: January 9, 2017.
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications" class="section animate">
+      <h2 class="section-title"><i class="fas fa-book"></i> RESEARCH ARTICLES</h2>
+
+      <div class="publication-item">
+        <p class="publication-citation">
+          <strong> M. Rafiq, A. Abdullah,</strong> Numerical investigation using Fibonacci wavelet collocation method for solving modified unstable nonlinear Schrödinger equation, <i>Int. J. Appl. Comput. Math.</i> <strong>9</strong> (2023) 118. <a href="https://doi.org/10.1007/s40819-023-01598-0" target="_blank" class="publication-link">https://doi.org/10.1007/s40819-023-01598-0</a>
+        </p>
+      </div>
+
+      <div class="publication-item">
+        <p class="publication-citation">
+          <strong> A. Abdullah, M. Rafiq,</strong> A computational approach for finding the numerical solution of modified unstable nonlinear Schrödinger equation via Haar wavelets, <i>Math. Methods Appl. Sci.</i> <strong>45</strong> (2022) 681–696. <a href="https://doi.org/10.1002/mma.7805" target="_blank" class="publication-link">https://doi.org/10.1002/mma.7805</a>
+        </p>
+      </div>
+
+      <div class="publication-item">
+        <p class="publication-citation">
+          <strong>A. Abdullah, M. Rafiq,</strong> A new numerical scheme based on Haar wavelets for the numerical solution of the Chen-Lee-Liu equation, <i>Optik.</i> <strong>226</strong> (2020) 165847. <a href="https://doi.org/10.1016/j.ijleo.2020.165847" target="_blank" class="publication-link">https://doi.org/10.1016/j.ijleo.2020.165847</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section animate">
+      <h2 class="section-title"><i class="fas fa-chalkboard-teacher"></i> SEMINARS/ WORKSHOPS/ CONFERENCES ATTENDED</h2>
+      <ul class="styled-list">
+        <li><strong>Attended</strong> a 30-hour certificate course on "<strong>Introduction to Python Programming</strong>," organized by the Department of Computer Science, Maitreyi College, University of Delhi, from August 5 to September 23, 2023.</li>
+        <li><strong>Presented</strong> the following research papers
+          <ol type="a">
+            <li>"Fibonacci wavelets collocation method for the numerical solution of the Chen–Lee–Liu equation" in the 2nd International Conference on Computational Sciences - Modelling, Computing and Soft Computing conducted online by the Department of Mathematics of Manipal Institute of Technology, Manipal, India during March 28-30, 2022.</li>
+            <li>"Numerical Solution of Modified Unstable Nonlinear Schrodinger Equation Using Haar Wavelets," in the International Conference on Mathematical Sciences and Computational Intelligence at Shri Mata Vaishno Devi University Katra, J&K, India, in collaboration with the Advance Research Educational Society held on 21-22 December 2020.</li>
+          </ol>
+        </li>
+        <li><strong>Participated</strong> in the Advanced Instructional School on "Fractional Differential Equations: Theory and Computations" organized by the South Asian University, New Delhi, December 12-24, 2022.</li>
+        <li><strong>Attended</strong> a Teacher's Enrichment Workshop on Differential Equations, Mathematical Modeling & Analysis, Deshbandhu College, University of Delhi, New Delhi, July 24-29, 2018.</li>
+        <li><strong>Participated</strong> in the National Research Scholars' Seminar organized by the Department of Mathematics, University of Delhi, Delhi, on December 28, 2018.</li>
+        <li><strong>Participated</strong> in the National Conference on Advances in Applied Mathematics and Statistics, Department of Mathematics, Mata Sundri College for Women, University of Delhi, Delhi, September 7-8, 2017.</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="section animate">
+      <h2 class="section-title"><i class="fas fa-laptop-code"></i> COMPUTER SKILLS</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <p class="skill-name">MATLAB</p>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="95"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <p class="skill-name">Mathematica</p>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="95"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <p class="skill-name">MS Office</p>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="80"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <p class="skill-name">C++</p>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="95"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <p class="skill-name">Python</p>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="95"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <p class="skill-name">LaTeX</p>
+          <div class="skill-bar">
+            <div class="skill-level" data-level="95"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section animate">
+      <h2 class="section-title"><i class="fas fa-certificate"></i> ACADEMICS</h2>
+      <p><strong>Awarded</strong> certificates for a short-term training course on</p>
+      <ul class="styled-list">
+        <li><strong>"Introduction to MATLAB,"</strong> April 2015 by the <strong>Delhi University Computer Centre.</strong></li>
+        <li><strong>"Introduction to MATHEMATICA,"</strong> September 2014 by the <strong>Delhi University Computer Centre.</strong></li>
+        <li><strong>"Basics Computer Concepts, MS-Word, Power-Point, Internet & Email,"</strong> September 2014 by the <strong>Delhi University Computer Centre.</strong></li>
+      </ul>
+    </section>
+
+    <section class="section animate">
+      <h2 class="section-title"><i class="fas fa-star"></i> EXTRAS</h2>
+      <ul class="styled-list">
+        <li><strong>Participated</strong> in the competition <strong>"The Legacy of Srinivasa Ramanujan Competition"</strong> on encryption organized by the University of Delhi for undergraduate students on the 125th birthday of mathematician Srinivasa Ramanujan on December 22, 2012, as a programmer.</li>
+      </ul>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <div class="container">
+        <p>💜 Dr. Mohd Rafiq💜 </p>
+      <p class="last-updated">Last Updated: September 21, 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animate skill bars when they come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillLevels = document.querySelectorAll('.skill-level');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const level = entry.target.getAttribute('data-level');
+            entry.target.style.width = level + '%';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      skillLevels.forEach(skill => {
+        observer.observe(skill);
+      });
+
+      // Add smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
