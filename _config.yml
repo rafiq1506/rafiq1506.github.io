@@ -1,0 +1,22 @@
+# Jekyll configuration for the academic resume website
+
+title: "Dr. Mohd Rafiq – Academic Resume"
+description: "Academic profile, teaching experience, research publications, awards, and professional skills of Dr. Mohd Rafiq."
+
+# GitHub Pages settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Keep the website's static assets and main HTML page available.
+include:
+  - index.html
+  - favicon.ico
+
+# Exclude development and repository files from the generated website.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitignore
